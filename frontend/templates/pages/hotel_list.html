@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'include/breadcrumb.html' %}
+
+<h1>{{ object.title }}</h1>
+
+{% for obj in paginated_object_list %}
+    <div>
+        <p><a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
+            {% if obj.small_image_hotel %}
+                <img src="{{ obj.small_image_hotel.url }}" alt="{{ obj.name_hotel }}">
+            {% endif %}
+            <h3>{{ obj.name_hotel }}</h3><br><h5>{{ obj.type_hotel }}</h5><h5>{{ obj.cost_hotel }}</h5>
+        </p>
+    </div>
+{% empty %}
+    <div>Записей пока нет.</div>
+{% endfor %}
+
+
+
+{% include 'include/pagination.html' %}
+
+{% endblock %}

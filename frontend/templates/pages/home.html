@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!--<h1>{{ object.title }}</h1>               Поле"Название страницы" в Админ панели-->
+    <!--{% include 'include/breadcrumb.html' %}   Верхняя надпись названия страницы(титул)-->
+
+    <h1> {{ object.first_name }} </h1>
+    <h2> {{ object.second_name }} </h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ res_form.as_p }}
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+    <br>
+    <br>
+    <ul>
+        <li>
+            <h3> {{ all_f.0.name_feature }} </h3>
+            <p> {{ all_f.0.number_feature }} </p>
+            <p> {{ all_f.0.text_feature }} </p>
+        </li>
+            <ul>
+                <li>
+                    <h3> {{ all_r.0.name_rec }} </h3>
+                    <p> {{ all_r.0.text_rec }} </p>
+                </li>
+                <li>
+                    <h3> {{ all_r.1.name_rec }} </h3>
+                    <p> {{ all_r.1.text_rec }} </p>
+                </li>
+                <li>
+                    <h3> {{ all_r.2.name_rec }} </h3>
+                    <p> {{ all_r.2.text_rec }} </p>
+                </li>
+            </ul>
+        <li>
+            <h3> {{ all_f.1.name_feature }} </h3>
+            <p> {{ all_f.1.number_feature }} </p>
+            <p> {{ all_f.1.text_feature }} </p>
+        </li>
+        <li>
+            <h3> {{ all_f.2.name_feature }} </h3>
+            <p> {{ all_f.2.number_feature }} </p>
+            <p> {{ all_f.2.text_feature }} </p>
+        </li>
+        <li>
+            <h3> {{ all_f.3.name_feature }} </h3>
+            <p> {{ all_f.3.number_feature }} </p>
+            <p> {{ all_f.3.text_feature }} </p>
+        </li>
+        <li>
+            <h3> {{ all_f.3.name_feature }} </h3>
+            <p> {{ all_f.3.number_feature }} </p>
+            <p> {{ all_f.3.text_feature }} </p>
+        </li>
+    </ul>
+
+{% endblock %}
