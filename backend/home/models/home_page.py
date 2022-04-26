@@ -13,9 +13,9 @@ class HomePage(BasePage):
     second_name = models.CharField(max_length=255, null=True)
     feature = models.ManyToManyField(Feature, verbose_name='Причины',
                                      related_name='features_names', blank=True)
-    recommendations = models.ManyToManyField(Recommendations, verbose_name='Причины',
+    recommendations = models.ManyToManyField(Recommendations, verbose_name='Рекомендации',
                                              related_name='recommendations_names', blank=True)
-    template = "pages/home.html"
+    template = "pages/index.html"
 
     def get_context(self, request=None, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)

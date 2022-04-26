@@ -6,7 +6,7 @@ from .hotel_page import HotelPage
 
 class HotelListPage(BaseListPage):
     paginate_by = 2
-    template = 'pages/hotel_list.html'
+    template = 'pages/hotels.html'
 
     def get_context(self, request=None, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
